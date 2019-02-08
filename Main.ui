@@ -1,0 +1,18 @@
+<layout alpha="1" backgroundColor="#ffffff" fontFamily="&quot;Open Sans&quot;, sans-serif" paddingRight="18" paddingTop="18" paddingBottom="18" paddingLeft="18" name="Main">
+    <datasource type="Main" name="main"/>
+    <navigationBar title="Main" hideBackButton="false">
+        <leftButtons/>
+        <rightButtons/>
+    </navigationBar>
+    <label wpercentage="1" alpha="1" fontSize="16" marginTop="0" marginBottom="8" marginLeft="0" marginRight="0" paddingRight="2" paddingTop="2" paddingBottom="2" paddingLeft="2" textColor="#1A181BFF" textAlignment="left" text="Enter IP or website domain. If you leave empty, you will get info related with your public IP" bind="main.text"/>
+    <textfield wpercentage="1" borderColor="#cccccc" borderWidth="0" cornerRadius="3" alpha="1" backgroundColor="#e5e5e5" fontFamily="&quot;Open Sans&quot;, sans-serif" fontSize="14" marginTop="0" marginBottom="8" marginLeft="0" marginRight="0" paddingRight="6" paddingTop="6" paddingBottom="6" paddingLeft="6" placeholder="Enter IP or website domain" bind="main.userIp"/>
+    <button wpercentage="1" height="40" textAlignment="center" cornerRadius="2" alpha="1" backgroundColor="#0080ff" fontSize="15" marginTop="6" marginBottom="10" paddingRight="10" paddingTop="10" paddingBottom="10" paddingLeft="10" textColor="#ffffff" text="Get info">
+        <selectedState/>
+        <highlightedState/>
+        <event on="TapEvent">
+            <action type="RunRuleAction" ruleContext="MainContext" ruleName="getInfo"/>
+        </event>
+    </button>
+    <textfield wpercentage="1" borderColor="#cccccc" borderWidth="0" cornerRadius="3" alpha="1" backgroundColor="#e5e5e5" fontFamily="&quot;Open Sans&quot;, sans-serif" fontSize="14" marginTop="0" marginBottom="8" marginLeft="0" marginRight="0" paddingRight="6" paddingTop="6" paddingBottom="6" paddingLeft="6" bind="main.output"/>
+    <mapview mapType="Normal" wpercentage="1" bind="main.locationInMap" name="locationInMap"/>
+</layout>
