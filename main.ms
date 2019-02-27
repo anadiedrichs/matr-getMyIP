@@ -6,12 +6,19 @@ Experience Main {
      
     Decision getInfo action("MainContext.getInfo") label("Get info")
     
-    
     String output label("")
 
 //    Decision showLocation action("MainContext.showLocation") label("Show location on map") 
     
-    Array<Marker> locationInMap as MapView
+ //   Array<Marker> locationInMap as MapView
+    
+    OnResume {
+        //CreateTreasure ct = broker.ui.getDataSource()
+        //ct.points = treasureScores
+        //ct.treasureLocationInMap = []
+    }
+
+
 }
 
 
@@ -34,15 +41,6 @@ Model MyInfo{
     //String AS  //<--- problemas con este atributo
 }
 
-//Model Utils {
-
-//    Bool getInfofromAPI (String query){
-        
-//        return true
-
-//    }
-
-//}
 
 
 RuleContext MainContext {
@@ -75,25 +73,22 @@ RuleContext MainContext {
                // create map, add location
                if(mi.lat != null && mi.lon != null){
                 
-                broker.ui.showAlert("debug", "entro al if ")
+ //               broker.ui.showAlert("debug", "entro al if ")
                 
-                if(m.locationInMap == null){
-                    broker.ui.showAlert("debug", "mapa nulo ") // no funciona indica que mapa es nulo :-(
-                    
+//                if(m.locationInMap == null){
+//                    broker.ui.showAlert("debug", "mapa nulo ") // no funciona indica que mapa es nulo :-(
+//                }
                 
-                }
+//                if (m.locationInMap.size() > 0) {
+//                    m.locationInMap.removeAll()
+//                }
                 
-                if (m.locationInMap.size() > 0) {
-                    m.locationInMap.removeAll()
-                }
-                
-                String markerName = "public IP location"
-                
-                Location loc = Location(latitude: mi.lat, longitude: mi.lon)
-                
-                Marker eventMarker = Marker(location: loc, title: markerName, showBubble: true, leftIcon: "https://goo.gl/Sg9RG9")
-                
-                m.locationInMap.add(eventMarker)
+//                String markerName = "public IP location"
+//                
+//                Location loc = Location(latitude: mi.lat, longitude: mi.lon)
+//                
+//                Marker eventMarker = Marker(location: loc, title: markerName, showBubble: true, leftIcon: "https://goo.gl/Sg9RG9")
+//            m.locationInMap.add(eventMarker)
                 
                }
                
